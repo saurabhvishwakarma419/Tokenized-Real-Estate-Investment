@@ -6,14 +6,6 @@ import "@openzeppelin/contracts/access/Ownable.sol"
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-/**
- * @title DynamicNFTMarketplace
- * @dev A marketplace for dynamic NFTs that can evolve over time
- */
-contract DynamicNFTMarketplace is ERC721URIStorage, Ownable, ReentrancyGuard {
-    using Counters for Counters.Counter;
-    Counters.Counter private _tokenIds
-
     mapping(uint256 => uint256) public tokenPrices;
     mapping(uint256 => uint256) public tokenEvolutionStages;
     mapping(uint256 => mapping(uint256 => string)) public evolutionStageURIs;
