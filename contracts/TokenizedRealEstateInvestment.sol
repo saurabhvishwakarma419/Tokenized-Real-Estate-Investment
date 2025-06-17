@@ -8,7 +8,6 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
     mapping(uint256 => uint256) public tokenPrices;
     mapping(uint256 => uint256) public tokenEvolutionStages;
-    mapping(uint256 => mapping(uint256 => string)) public evolutionStageURIs;
 
     mapping(uint256 => uint256) public tokenPrices;
     mapping(uint256 => uint256) public tokenEvolutionStages;
