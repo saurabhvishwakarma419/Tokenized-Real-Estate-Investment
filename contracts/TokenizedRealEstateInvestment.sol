@@ -67,11 +67,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
     function updateListingPrice(uint256 tokenId, uint256 newPrice) external {
         require(ownerOf(tokenId) == msg.sender, "Not the owner");
-        require(newPrice > 0, "Price must be greater than zero");
-
-        tokenPrices[tokenId] = newPrice;
-        emit NFTListed(tokenId, msg.sender, newPrice);
-    }
+        require(newPrice > 0, "Price must be greater than zero"
 
     function evolveNFT(uint256 tokenId, string memory newStageURI) external {
         require(ownerOf(tokenId) == msg.sender, "Not the owner");
