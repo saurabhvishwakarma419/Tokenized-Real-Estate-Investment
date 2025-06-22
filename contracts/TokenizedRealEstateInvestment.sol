@@ -1,22 +1,25 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStage.sol";
-import "@openzeppelin/contracts/access/Ownable.sol"
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
+contract DynamicNFT is ERC721URIStorage, Ownable, ReentrancyGuard {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
+
     mapping(uint256 => uint256) public tokenPrices;
     mapping(uint256 => uint256) public tokenEvolutionStages;
+    mapping(uint256 => mapping(uint256 => string)) public evolutionStageURIs;
 
-
- 
-    event NFTBurned(uint256 indexed tokenId, address indexed owner);    event NFTListed(uint256 indexed tokenId, address indexed seller, uint256 price);
+    event NFTBurned(uint256 indexed tokenId, address indexed owner);
+    event NFTListed(uint256 indexed tokenId, address indexed seller, uint256 price);
     event NFTDelisted(uint256 indexed tokenId, address indexed owner);
     event NFTPurchased(uint256 indexed tokenId, address indexed seller, address indexed buyer, uint256 price);
     event NFTEvolved(uint256 indexed tokenId, uint256 newStage);
     event NFTRelisted(uint256 indexed tokenId, uint256 price);
-    event NFTBurned(uint256 indexed tokenId, address indexed owner);
 
     constructor() ERC721("DynamicNFT", "DNFT") {}
 
@@ -34,7 +37,6 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
         emit NFTListed(newTokenId, msg.sender, price);
         return newTokenId;
-    
     }
 
     function purchaseNFT(uint256 tokenId) external payable nonReentrant {
@@ -67,7 +69,11 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
     function updateListingPrice(uint256 tokenId, uint256 newPrice) external {
         require(ownerOf(tokenId) == msg.sender, "Not the owner");
-        require(newPrice > 0, "Price must be greater than zero"
+        require(newPrice > 0, "Price must be greater than zero");
+
+        tokenPrices[tokenId] = newPrice;
+        emit NFTRelisted(tokenId, newPrice);
+    }
 
     function evolveNFT(uint256 tokenId, string memory newStageURI) external {
         require(ownerOf(tokenId) == msg.sender, "Not the owner");
@@ -165,5 +171,40 @@ import "@openzeppelin/contracts/utils/Counters.sol";
         }
 
         return (ids, prices);
+    }
+
+    // 🔧 Additional Utility Functions
+
+    function getTokenURI(uint256 tokenId) external view returns (string memory) {
+        require(_exists(tokenId), "Token does not exist");
+        return tokenURI(tokenId);
+    }
+
+    function getAllNFTs() external view returns (uint256[] memory) {
+        uint256 total = _tokenIds.current();
+        uint256[] memory ids = new uint256[](total);
+        for (uint256 i = 0; i < total; i++) {
+            ids[i] = i + 1;
+        }
+        return ids;
+    }
+
+    function isListed(uint256 tokenId) external view returns (bool) {
+        return tokenPrices[tokenId] > 0;
+    }
+
+    function getTokenDetails(uint256 tokenId) external view returns (
+        address owner,
+        uint256 price,
+        uint256 stage,
+        string memory currentURI
+    ) {
+        require(_exists(tokenId), "Token does not exist");
+        return (
+            ownerOf(tokenId),
+            tokenPrices[tokenId],
+            tokenEvolutionStages[tokenId],
+            tokenURI(tokenId)
+        );
     }
 }
