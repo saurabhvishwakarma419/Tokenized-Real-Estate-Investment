@@ -65,7 +65,5 @@ Develop advanced analytics tools for investors to track performance, predict ret
 Enable users to use their property tokens as collateral for loans, creating additional utility for token holders.
 
 ### Insurance Integration
-Partner with insurance providers to offer protection for tokenized properties, with premiums handled through smart contracts.
-
-contract Address :0xe17bdA2f80C0E35c1B0725CE4AdBe3Ec42871c71
+Partner with insurance providers to offer protection for tokenized properties, with premiums handled through smart contracts:0xe17bdA2f80C0E35c1B0725CE4AdBe3Ec42871c71
 ![image](https://github.com/user-attachments/assets/1626cb65-44c7-442a-84bb-2aafbfa28939)
