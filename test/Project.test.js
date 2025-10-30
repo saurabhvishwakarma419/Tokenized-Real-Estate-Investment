@@ -1,3 +1,4 @@
+
 // test/Project.test.js
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
@@ -61,6 +62,7 @@ describe("Tokenized Real Estate Investment Platform", function () {
         "New York City",
         "Premium downtown location",
         ethers.parseEther
+
 
 
 
