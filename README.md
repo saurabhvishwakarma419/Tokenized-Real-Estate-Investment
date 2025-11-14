@@ -1,4 +1,3 @@
-
 # Tokenized Real Estate Investment
 
 # Project Description
