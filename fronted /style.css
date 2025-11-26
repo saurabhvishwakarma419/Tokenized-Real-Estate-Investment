@@ -1,1 +1,878 @@
+/* ================================
+   TOKENIZED REAL ESTATE PLATFORM
+   Complete CSS Stylesheet
+   ================================ */
 
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+    min-height: 100vh;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ================================
+   HEADER SECTION
+   ================================ */
+.header {
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon svg {
+    color: white;
+}
+
+.logo-text h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.logo-text p {
+    font-size: 0.75rem;
+    color: #93c5fd;
+    margin: 0;
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+    color: white;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem;
+}
+
+/* ================================
+   NAVIGATION TABS
+   ================================ */
+.nav-tabs {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 0.25rem 0;
+    margin-bottom: 0.5rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(30, 41, 59, 0.5);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.tab {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    color: #9ca3af;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.tab:hover {
+    color: white;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.tab.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* ================================
+   MAIN CONTENT
+   ================================ */
+main {
+    padding: 2rem 0;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   STATS GRID (Portfolio)
+   ================================ */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.stat-header svg {
+    color: #60a5fa;
+}
+
+.stat-change {
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.stat-change.positive {
+    color: #34d399;
+    background: rgba(52, 211, 153, 0.1);
+}
+
+.stat-change.negative {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+}
+
+.stat-label {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* ================================
+   HOLDINGS CARD
+   ================================ */
+.holdings-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.holdings-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.holdings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.holding-item {
+    background: rgba(51, 65, 85, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.holding-item:hover {
+    background: rgba(51, 65, 85, 0.8);
+    transform: translateX(4px);
+}
+
+.holding-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.holding-info p {
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+.holding-value {
+    text-align: right;
+}
+
+.holding-value .value {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.holding-value .gain {
+    font-size: 0.875rem;
+    color: #34d399;
+}
+
+/* ================================
+   HERO SECTION
+   ================================ */
+.hero {
+    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.hero-text h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    font-size: 1.125rem;
+    color: #bfdbfe;
+}
+
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-value {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.hero-stat-label {
+    color: #bfdbfe;
+}
+
+.hero-divider {
+    width: 1px;
+    height: 4rem;
+    background: rgba(191, 219, 254, 0.4);
+}
+
+/* ================================
+   PROPERTIES GRID
+   ================================ */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 1.5rem;
+}
+
+.property-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.property-card:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.property-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover .property-image {
+    transform: scale(1.05);
+}
+
+.property-content {
+    padding: 1.5rem;
+}
+
+.property-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.property-title h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.property-location {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+.property-location svg {
+    width: 16px;
+    height: 16px;
+}
+
+.property-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.property-status.active {
+    background: rgba(52, 211, 153, 0.2);
+    color: #34d399;
+}
+
+.property-status.funding {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+}
+
+/* ================================
+   PROPERTY METRICS
+   ================================ */
+.property-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(51, 65, 85, 1);
+    border-bottom: 1px solid rgba(51, 65, 85, 1);
+    margin-bottom: 1rem;
+}
+
+.metric {
+    text-align: center;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-bottom: 0.25rem;
+}
+
+.metric-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+}
+
+.metric-value.green {
+    color: #34d399;
+}
+
+.metric-value.blue {
+    color: #60a5fa;
+}
+
+/* ================================
+   PROGRESS BAR
+   ================================ */
+.property-progress {
+    margin-bottom: 1rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-header .label {
+    color: #9ca3af;
+}
+
+.progress-header .value {
+    font-weight: 500;
+    color: white;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 0.5rem;
+    background: rgba(51, 65, 85, 1);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+}
+
+.progress-footer {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 0.5rem;
+}
+
+/* ================================
+   INVEST BUTTON
+   ================================ */
+.invest-btn {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.invest-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+}
+
+.invest-btn:active {
+    transform: translateY(0);
+}
+
+/* ================================
+   MODAL
+   ================================ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+    background: #1e293b;
+    border-radius: 1rem;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(51, 65, 85, 1);
+}
+
+.modal-title h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.modal-title p {
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    background: rgba(51, 65, 85, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-info-item .label {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-bottom: 0.25rem;
+}
+
+.modal-info-item .value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.modal-info-item .value.return {
+    color: #34d399;
+}
+
+/* ================================
+   FORM ELEMENTS
+   ================================ */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(51, 65, 85, 1);
+    border: 1px solid rgba(71, 85, 105, 1);
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #64748b;
+}
+
+.helper-text {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin-top: 0.5rem;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+@media (max-width: 1024px) {
+    .properties-grid {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-stats {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-stat-value {
+        font-size: 1.75rem;
+    }
+
+    .properties-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .holding-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .holding-value {
+        text-align: center;
+    }
+
+    .property-metrics {
+        gap: 0.5rem;
+    }
+
+    .metric-value {
+        font-size: 1rem;
+    }
+
+    .tabs {
+        flex-direction: row;
+    }
+
+    .tab {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+
+    .modal-content {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        height: auto;
+        padding: 0.75rem 0;
+    }
+
+    .logo-text h1 {
+        font-size: 1rem;
+    }
+
+    .btn-primary span {
+        display: none;
+    }
+
+    .hero {
+        padding: 1.5rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-divider {
+        display: none;
+    }
+
+    .property-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .property-status {
+        align-self: flex-start;
+    }
+}
+
+/* ================================
+   UTILITY CLASSES
+   ================================ */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 0.75rem; }
+.p-4 { padding: 1rem; }
+
+/* ================================
+   SCROLLBAR STYLING
+   ================================ */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.7);
+}
