@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealToken - Tokenized Real Estate Investment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>RealToken</h1>
+                        <p>Invest in Real Estate</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="connectWallet">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                        <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                        <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+                    </svg>
+                    Connect Wallet
+                </button>
+            </div>
+        </div>
+    </header>
 
+    <!-- Navigation -->
+    <nav class="nav-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab active" data-tab="marketplace">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Marketplace
+                </button>
+                <button class="tab" data-tab="portfolio">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="20" x2="12" y2="10"></line>
+                        <line x1="18" y1="20" x2="18" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="16"></line>
+                    </svg>
+                    Portfolio
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Portfolio View -->
+        <div id="portfolioView" class="tab-content">
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        <span class="stat-change positive">+12.5%</span>
+                    </div>
+                    <p class="stat-label">Total Portfolio Value</p>
+                    <p class="stat-value">$50,000</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span class="stat-change positive">+1</span>
+                    </div>
+                    <p class="stat-label">Properties Owned</p>
+                    <p class="stat-value">2</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                        <span class="stat-change positive">+8.3%</span>
+                    </div>
+                    <p class="stat-label">Monthly Income</p>
+                    <p class="stat-value">$425</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                        <span class="stat-change positive">+15.2%</span>
+                    </div>
+                    <p class="stat-label">Total Returns</p>
+                    <p class="stat-value">$3,350</p>
+                </div>
+            </div>
+
+            <!-- Holdings -->
+            <div class="holdings-card">
+                <h2>Your Holdings</h2>
+                <div class="holdings-list">
+                    <div class="holding-item">
+                        <div class="holding-info">
+                            <h3>Luxury Downtown Apartment Complex</h3>
+                            <p>250 tokens</p>
+                        </div>
+                        <div class="holding-value">
+                            <p class="value">$25,000</p>
+                            <p class="gain">+$1,250</p>
+                        </div>
+                    </div>
+                    <div class="holding-item">
+                        <div class="holding-info">
+                            <h3>Tech Hub Office Building</h3>
+                            <p>100 tokens</p>
+                        </div>
+                        <div class="holding-value">
+                            <p class="value">$25,000</p>
+                            <p class="gain">+$2,100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marketplace View -->
+        <div id="marketplaceView" class="tab-content active">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>Invest in Premium Real Estate</h2>
+                        <p>Start with as little as $100. Earn passive income from rent and appreciation.</p>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <p class="hero-stat-value">$2.5B+</p>
+                            <p class="hero-stat-label">Total Value</p>
+                        </div>
+                        <div class="hero-divider"></div>
+                        <div class="hero-stat">
+                            <p class="hero-stat-value">50K+</p>
+                            <p class="hero-stat-label">Investors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Properties Grid -->
+            <div class="properties-grid" id="propertiesGrid">
+                <!-- Properties will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Investment Modal -->
+    <div id="investmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h3 id="modalPropertyName"></h3>
+                    <p id="modalPropertyLocation"></p>
+                </div>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info">
+                    <div class="modal-info-item">
+                        <p class="label">Token Price</p>
+                        <p class="value" id="modalTokenPrice"></p>
+                    </div>
+                    <div class="modal-info-item">
+                        <p class="label">Expected Return</p>
+                        <p class="value return" id="modalExpectedReturn"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Investment Amount (USD)</label>
+                    <input type="number" id="investmentAmount" placeholder="1000" min="0">
+                    <p class="helper-text" id="tokenCount"></p>
+                </div>
+                <button class="btn btn-gradient btn-block" id="confirmInvestment">
+                    Confirm Investment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
