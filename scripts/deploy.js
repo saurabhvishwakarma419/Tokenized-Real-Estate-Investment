@@ -1,4 +1,3 @@
-
 const { ethers } = require("hardhat");
 async function main() {
   console.log("Deploying RealEstateToken contract...");
@@ -29,6 +28,7 @@ main()
     console.error("Error during deployment:", error);
     process.exit(1);
   });
+
 
 
 
