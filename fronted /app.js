@@ -1,3 +1,4 @@
+
 // Property Data
 const properties = [
     {
